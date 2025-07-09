@@ -1,0 +1,33 @@
+.header {
+	position: relative;
+	top: 0;
+	z-index: 1000; // выше контента
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__logo {
+		@include fluid-prop(margin-top, 72, 36);
+		@include fluid-prop(margin-bottom, 72, 36);
+		@include fluid-prop(width, 187, 136);
+		margin-inline: auto;
+	}
+
+	&__menu {
+		text-transform: uppercase;
+
+		&-button {
+			@include reset-button;
+		}
+
+		&-list {
+			@include fluid-text(20, 16);
+			display: flex;
+			justify-content: space-between;
+			max-width: 1160px;
+			margin-inline: auto;
+		}
+	}
+}
