@@ -1,5 +1,15 @@
 .container {
-	max-width: calc(var(--container-full-width) + var(--container-full-padding-x) * 2);
-	margin-inline: auto;  
-	padding-inline: var(--container-full-padding-x) 
+	margin-inline: auto;
+
+	@include fluid-prop(max-width, 1920, 1400, 1440, 1920);
+	@include fluid-prop(padding-inline, 40, 20, 1440, 1920);
+
+	@include tablet {
+		@include fluid-prop(max-width, 1400, 984, 1024, 1440);
+	}
+
+	@include mobile {
+		@include fluid-prop(max-width, 984, 374, 402, 1024);
+		@include fluid-prop(padding-inline, 20, 14, 402, 1024);
+	}
 }

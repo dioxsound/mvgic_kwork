@@ -1,7 +1,7 @@
 .header {
 	position: relative;
 	top: 0;
-	z-index: 1000; // выше контента
+	z-index: 1000;
 
 	&__container {
 		display: flex;
@@ -9,10 +9,21 @@
 	}
 
 	&__logo {
-		@include fluid-prop(margin-top, 72, 36);
-		@include fluid-prop(margin-bottom, 72, 36);
-		@include fluid-prop(width, 187, 136);
 		margin-inline: auto;
+
+		@include fluid-prop(max-width, 187, 138, 1440, 1920);
+		@include fluid-prop(margin-top, 72, 56, 1440, 1920);
+		@include fluid-prop(margin-bottom, 72, 56, 1440, 1920);
+
+		@include tablet {
+			@include fluid-prop(margin-top, 56, 54, 1024, 1440);
+			@include fluid-prop(margin-bottom, 56, 54, 1024, 1440);
+		}
+
+		@include mobile {
+			@include fluid-prop(margin-top, 54, 36, 402, 1024);
+			@include fluid-prop(margin-bottom, 54, 36, 402, 1024);
+		}
 	}
 
 	&__menu {
@@ -23,11 +34,20 @@
 		}
 
 		&-list {
-			@include fluid-text(20, 16);
 			display: flex;
 			justify-content: space-between;
-			max-width: 1160px;
 			margin-inline: auto;
+
+			@include fluid-text(20, 16, 1440, 1920);
+			@include fluid-prop(max-width, 1160, 856, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(max-width, 856, 564, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(max-width, 564, 280, 402, 1024);
+			}
 		}
 	}
 }

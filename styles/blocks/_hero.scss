@@ -4,7 +4,6 @@
 	align-items: center;
 	justify-content: center;
 
-
 	&__container {
 		display: flex;
 		justify-content: center;
@@ -12,9 +11,18 @@
 
 	&__title {
 		letter-spacing: 0.5em;
-		font-family: 'Medium-Regular', sans-serif;
-		@include fluid-text(200, 53);
+		font-family: "Medium-Regular", sans-serif;
 		font-weight: 200;
+
+		@include fluid-text(200, 170, 1440, 1920);
+
+		@include tablet {
+			@include fluid-text(170, 103, 1024, 1440);
+		}
+
+		@include mobile {
+			@include fluid-text(103, 53, 402, 1024);
+		}
 		span {
 			letter-spacing: 0;
 		}

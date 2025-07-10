@@ -17,8 +17,12 @@
 	border: none;
 }
 
-@mixin fluid-text($max: 48, $min: 16) {
-	font-size: clamp(#{$min}px, #{$max / 1518 * 100}vw, #{$max}px);
+@mixin fluid-text($max, $min, $min-width: 402, $max-width: 1920) {
+  font-size: clamp(
+    #{$min}px,
+    calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width}))),
+    #{$max}px
+  );
 }
 
 @mixin fluid-prop($property, $max, $min, $min-width: 402, $max-width: 1920) {
