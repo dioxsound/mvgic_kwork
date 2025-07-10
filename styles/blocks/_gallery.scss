@@ -68,7 +68,7 @@
 			@include mobile {
 				@include fluid-prop(margin-top, 200, 120, 402, 1024);
 				@include fluid-prop(max-width, 868, 323, 402, 1024);
-				@include fluid-prop(margin-left, 59, 25, 402, 1024);
+				@include fluid-prop(margin-left, 42, 26, 402, 1024);
 			}
 		}
 
@@ -139,8 +139,10 @@
 
 		& > figcaption {
 			@include fluid-text(20, 15, 1440, 1920);
+			@include fluid-prop(margin-top, 12, 8, 1440, 1920);
 
 			@include mobile {
+				@include fluid-prop(margin-top, 8, 4, 402, 1024);
 				@include fluid-text(15, 10, 402, 1024);
 			}
 		}

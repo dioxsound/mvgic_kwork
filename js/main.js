@@ -61,3 +61,21 @@ const observer = new IntersectionObserver(
 galleryItems.forEach(item => {
   observer.observe(item);
 });
+
+const audio = document.getElementById('background-audio');
+const muteButton = document.querySelector('.header__menu-button');
+
+// Запускаем музыку только после первого взаимодействия
+let audioInitialized = false;
+
+muteButton.addEventListener('click', () => {
+  if (!audioInitialized) {
+    audio.play().catch(err => {
+      console.warn('Audio playback failed:', err);
+    });
+    audioInitialized = true;
+  }
+
+  audio.muted = !audio.muted;
+  muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
+});
