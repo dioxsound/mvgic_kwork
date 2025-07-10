@@ -313,8 +313,9 @@ a {
   padding: 0;
   background-color: transparent;
   border: none;
-  max-width: 30px;
   text-align: center;
+  width: clamp(46.63px, 46.63px + (58.03 - 46.63) * (100vw - 1440px) / (1920 - 1440), 58.03px);
+  font-size: clamp(16px, 16px + (20 - 16) * (100vw - 1440px) / (1920 - 1440), 20px);
 }
 .header__menu-list {
   display: flex;

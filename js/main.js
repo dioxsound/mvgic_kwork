@@ -87,17 +87,27 @@ galleryItems.forEach(item => {
 const audio = document.getElementById('background-audio');
 const muteButton = document.querySelector('.header__menu-button');
 
-// Запускаем музыку только после первого взаимодействия
 let audioInitialized = false;
 
-muteButton.addEventListener('click', () => {
+// Функция запуска звука
+function initAudioPlayback() {
   if (!audioInitialized) {
     audio.play().catch(err => {
       console.warn('Audio playback failed:', err);
     });
     audioInitialized = true;
   }
+}
 
-  audio.muted = !audio.muted;
-  muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
+// Включаем звук при ЛЮБОМ действии
+['click', 'scroll', 'keydown'].forEach(event => {
+  window.addEventListener(event, initAudioPlayback, { once: true });
 });
+
+// Обработка кнопки Mute
+muteButton.addEventListener('click', () => {
+  initAudioPlayback(); // на всякий случай, если первый клик — это mute
+  audio.muted = !audio.muted;
+  muteButton.textContent = audio.muted ? 'Play' : 'Mute';
+});
+

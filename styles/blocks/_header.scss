@@ -35,8 +35,9 @@
 
 		&-button {
 			@include reset-button;
-			max-width: 30px;
 			text-align: center;
+			@include fluid-prop(width, 58.03, 46.63, 1440, 1920);
+			@include fluid-text(20, 16, 1440, 1920);	
 		}
 
 		&-list {
