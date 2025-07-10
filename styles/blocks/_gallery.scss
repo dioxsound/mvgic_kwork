@@ -11,11 +11,16 @@
 	}
 
 	&__item {
-		transition: transform 0.3s ease-out;
+		transform: translateY(100px);
+		transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		will-change: transform;
 
 		&.in-view {
 			transform: translateY(0);
+		}
+
+		&.above {
+			transform: translateY(-100px);
 		}
 
 		&.item-1 {
@@ -33,6 +38,105 @@
 			}
 		}
 
+		&.item-2 {
+			align-self: flex-end;
+			@include fluid-prop(margin-top, 282, 199, 1440, 1920);
+			@include fluid-prop(max-width, 517, 389, 1440, 1920);
+			@include fluid-prop(margin-right, 237, 183, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-right, 183, 43, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 199, 120, 402, 1024);
+				@include fluid-prop(max-width, 389, 277, 402, 1024);
+				@include fluid-prop(margin-right, 43, 0, 402, 1024);
+			}
+		}
+
+		&.item-3 {
+			@include fluid-prop(margin-top, 264, 138, 1440, 1920);
+			@include fluid-prop(max-width, 1142, 868, 1440, 1920);
+			@include fluid-prop(margin-left, 88, 59, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-left, 59, 42, 1024, 1440);
+				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 200, 120, 402, 1024);
+				@include fluid-prop(max-width, 868, 323, 402, 1024);
+				@include fluid-prop(margin-left, 59, 25, 402, 1024);
+			}
+		}
+
+		&.item-4 {
+			align-self: flex-end;
+			@include fluid-prop(margin-top, 264, 138, 1440, 1920);
+			@include fluid-prop(max-width, 1120, 927, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 200, 120, 402, 1024);
+				@include fluid-prop(max-width, 927, 306, 402, 1024);
+			}
+		}
+
+		&.item-5 {
+			@include fluid-prop(margin-top, 264, 138, 1440, 1920);
+			@include fluid-prop(max-width, 755, 571, 1440, 1920);
+			@include fluid-prop(margin-left, 310, 237, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
+				@include fluid-prop(margin-left, 237, 147, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 200, 120, 402, 1024);
+				@include fluid-prop(max-width, 571, 234, 402, 1024);
+				@include fluid-prop(margin-left, 147, 0, 402, 1024);
+			}
+		}
+
+		&.item-6 {
+			align-self: flex-end;
+			@include fluid-prop(margin-top, 184, 138, 1440, 1920);
+			@include fluid-prop(max-width, 522, 395, 1440, 1920);
+			@include fluid-prop(margin-right, 155, 98, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
+				@include fluid-prop(margin-right, 98, 105, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 200, 120, 402, 1024);
+				@include fluid-prop(max-width, 395, 229, 402, 1024);
+				@include fluid-prop(margin-right, 105, 42, 402, 1024);
+			}
+		}
+
+		&.item-7 {
+			@include fluid-prop(margin-top, 184, 138, 1440, 1920);
+			@include fluid-prop(max-width, 1840, 1400, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
+				@include fluid-prop(max-width, 1400, 984, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(margin-top, 200, 120, 402, 1024);
+				@include fluid-prop(max-width, 984, 374, 402, 1024);
+			}
+		}
+
 		& > figcaption {
 			@include fluid-text(20, 15, 1440, 1920);
 
@@ -43,7 +147,6 @@
 	}
 
 	&__container {
-		margin-inline: 0;
 		display: flex;
 		flex-direction: column;
 	}

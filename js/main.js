@@ -16,8 +16,8 @@ let lastScrollY = 0
 let ticking = false
 
 function updateBlurSmooth() {
-  const maxScroll = 300; // на каком скролле будет макс. блюр
-  const maxBlur = 25; // максимум в px
+  const maxScroll = 300;
+  const maxBlur = 25;
 
   const scroll = Math.min(window.scrollY, maxScroll);
   const blurValue = (scroll / maxScroll) * maxBlur;
@@ -29,45 +29,35 @@ window.addEventListener('scroll', () => {
   requestAnimationFrame(updateBlurSmooth);
 });
 
+
+const galleryItems = document.querySelectorAll('.gallery__item');
+
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
+      const el = entry.target;
+
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view')
+        el.classList.add('in-view');
+        el.classList.remove('above');
       } else {
-        entry.target.classList.remove('in-view')
+        const bounding = el.getBoundingClientRect();
+
+        if (bounding.top < 0) {
+          el.classList.remove('in-view');
+          el.classList.add('above');
+        } else {
+          el.classList.remove('in-view');
+          el.classList.remove('above');
+        }
       }
-    })
+    });
   },
   {
-    threshold: 0.2
+    threshold: 0.1,
   }
-)
+);
 
-document.querySelectorAll('.gallery__item').forEach(item => {
-  observer.observe(item)
-})
-
-// === ПАРАЛЛАКС ГАЛЕРЕИ ===
-const galleryItems = document.querySelectorAll('.gallery__item')
-
-function parallaxGallery () {
-  const windowHeight = window.innerHeight
-
-  galleryItems.forEach(item => {
-    const rect = item.getBoundingClientRect()
-    const offset = rect.top - windowHeight / 2
-
-    const maxTranslate = 50 // ограничим сдвиг, чтоб не улетали
-    let translateY = offset * -0.15
-
-    // clamp значение
-    translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY))
-
-    item.style.transform = `translateY(${translateY}px)`
-  })
-
-  requestAnimationFrame(parallaxGallery)
-}
-
-requestAnimationFrame(parallaxGallery)
+galleryItems.forEach(item => {
+  observer.observe(item);
+});
