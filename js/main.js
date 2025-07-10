@@ -40,27 +40,49 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         el.classList.add('in-view');
         el.classList.remove('above');
+        el.classList.remove('below');
       } else {
         const bounding = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
 
         if (bounding.top < 0) {
+          // элемент выше экрана
           el.classList.remove('in-view');
           el.classList.add('above');
+          el.classList.remove('below');
+        } else if (bounding.top > viewportHeight) {
+          // элемент ниже экрана
+          el.classList.remove('in-view');
+          el.classList.remove('above');
+          el.classList.add('below');
         } else {
           el.classList.remove('in-view');
           el.classList.remove('above');
+          el.classList.remove('below');
         }
       }
     });
   },
   {
-    threshold: 0.1,
+    threshold: 0,
+    rootMargin: '10px 0px',
   }
 );
+
+
 
 galleryItems.forEach(item => {
   observer.observe(item);
 });
+
+
+
+
+
+
+
+
+
 
 const audio = document.getElementById('background-audio');
 const muteButton = document.querySelector('.header__menu-button');

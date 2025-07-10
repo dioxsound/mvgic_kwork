@@ -11,17 +11,23 @@
 	}
 
 	&__item {
-		transform: translateY(100px);
-		transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		will-change: transform;
+  transform: translateY(150px);
+  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 
-		&.in-view {
-			transform: translateY(0);
-		}
+  &.in-view {
+    transform: translateY(0);
+  }
 
-		&.above {
-			transform: translateY(-100px);
-		}
+  &.above {
+    transform: translateY(-100px);
+    transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
+  }
+
+  &.below {
+    transform: translateY(150px);
+    transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
+  }
+
 
 		&.item-1 {
 			@include fluid-prop(max-width, 1140, 808, 1440, 1920);
