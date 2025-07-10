@@ -206,6 +206,13 @@ svg * {
 }
 @font-face {
   font-family: "Clash Display";
+  src: url("../fonts/ClashDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
   src: url("../fonts/ClashDisplay-Semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
@@ -303,6 +310,53 @@ a {
     margin-bottom: clamp(36px, 36px + (54 - 36) * (100vw - 402px) / (1024 - 402), 54px);
   }
 }
+.header__submenu {
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #191919;
+  padding: 32px 53px;
+  z-index: 1001;
+  font-family: "Clash Display", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.header__submenu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.header__submenu > * {
+  margin-bottom: 24px;
+}
+.header__submenu > *:last-child {
+  margin-bottom: 0;
+}
+.header__submenu > a {
+  font-weight: 700;
+}
+.header__submenu-button {
+  color: var(--color-light);
+  font-size: 20px;
+  text-transform: inherit;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+.header__submenu p {
+  margin: 12px 0 12px 0;
+}
 .header__menu {
   text-transform: uppercase;
 }
@@ -314,8 +368,11 @@ a {
   background-color: transparent;
   border: none;
   text-align: center;
-  width: clamp(46.63px, 46.63px + (58.03 - 46.63) * (100vw - 1440px) / (1920 - 1440), 58.03px);
   font-size: clamp(16px, 16px + (20 - 16) * (100vw - 1440px) / (1920 - 1440), 20px);
+  width: clamp(46.63px, 46.63px + (58.03 - 46.63) * (100vw - 1440px) / (1920 - 1440), 58.03px);
+}
+.header__menu-button--contacts {
+  width: auto;
 }
 .header__menu-list {
   display: flex;

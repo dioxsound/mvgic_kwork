@@ -27,7 +27,16 @@
 						<button class="header__menu-button button" type="button">Mute</button>
 					</li>
 					<li class="header__menu-item">
-						<a href="#" class="header__menu-link">Contacts</a>
+						<button class="header__menu-button header__menu-button--contacts" type="button">Contacts</button>
+						<div class="header__submenu" >
+							<button class="header__submenu-button button" type="button">Close</button>
+							<a href="#">Instagram</a>
+							<a href="#">Youtube</a>
+							<a href="#">Spotify</a>
+							<a href="#">LinkedIn</a>
+							<p>Email for collaborations:</p>
+							<a href="mailto:magic@mail.com">magic@mail.com</a>
+						</div>
 					</li>
 					<li class="header__menu-item">
 						<a href="#" class="header__menu-link">Music</a>
@@ -99,7 +108,7 @@
 
 	</main>
 
-	<audio id="background-audio" loop>
+	<audio id="background-audio" preload="auto" muted autoplay loop>
 		<source src="./audio/flowers.mp3" type="audio/mpeg">
 	</audio>
 	<script src="./js/main.js"></script>
