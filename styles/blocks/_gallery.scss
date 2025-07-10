@@ -1,0 +1,50 @@
+.gallery {
+	@include fluid-prop(padding-top, 143, 245, 1440, 1920);
+	@include fluid-prop(padding-bottom, 131, 56, 1440, 1920);
+
+	@include tablet {
+		@include fluid-prop(padding-top, 245, 90, 1024, 1440);
+	}
+
+	@include mobile {
+		@include fluid-prop(padding-top, 90, 71, 402, 1024);
+	}
+
+	&__item {
+		transition: transform 0.3s ease-out;
+		will-change: transform;
+
+		&.in-view {
+			transform: translateY(0);
+		}
+
+		&.item-1 {
+			@include fluid-prop(max-width, 1140, 808, 1440, 1920);
+
+			@include fluid-prop(margin-left, 236, 178, 1440, 1920);
+
+			@include tablet {
+				@include fluid-prop(margin-left, 178, 84, 1024, 1440);
+			}
+
+			@include mobile {
+				@include fluid-prop(max-width, 808, 316, 402, 1024);
+				@include fluid-prop(margin-left, 104, 0, 402, 1024);
+			}
+		}
+
+		& > figcaption {
+			@include fluid-text(20, 15, 1440, 1920);
+
+			@include mobile {
+				@include fluid-text(15, 10, 402, 1024);
+			}
+		}
+	}
+
+	&__container {
+		margin-inline: 0;
+		display: flex;
+		flex-direction: column;
+	}
+}

@@ -12,4 +12,19 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
+	&::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(var(--blur-amount, 0px));
+  transition: backdrop-filter 0.1s linear;
+  z-index: 1;
+  pointer-events: none;
+}
+
+&.blurred::after {
+  backdrop-filter: blur(25px);
+}
+
 }
