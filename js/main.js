@@ -67,31 +67,25 @@ const observer = new IntersectionObserver(handleIntersection, {
 galleryItems.forEach(item => observer.observe(item))
 
 // ============ КОНТРОЛЬ АУДИО ============
-let audioInitialized = false
 
-function initAudioPlayback () {
-  if (!audio || !muteButton) return
+if (audio && muteButton) {
+  let audioPlaying = false
 
-  if (!audioInitialized) {
-    audio.play().catch(err => {
-      console.warn('Autoplay failed:', err)
-    })
-    audioInitialized = true
-  }
+  muteButton.addEventListener('click', () => {
+    if (!audioPlaying) {
+      audio.play().catch(err => {
+        console.warn('Play failed:', err)
+      })
+      audio.muted = false
+      audioPlaying = true
+      muteButton.textContent = 'Mute'
+    } else {
+      audio.muted = !audio.muted
+      muteButton.textContent = audio.muted ? 'Play' : 'Mute'
+    }
+  })
 }
 
-// Автозапуск аудио при первом взаимодействии пользователя
-;['click', 'scroll', 'keydown'].forEach(event => {
-  window.addEventListener(event, initAudioPlayback, { once: true })
-})
-
-// Переключение состояния "тишина"
-muteButton.addEventListener('click', () => {
-  if (!audio) return
-
-  audio.muted = !audio.muted
-  muteButton.textContent = audio.muted ? 'Play' : 'Mute'
-})
 
 // ============ МЕНЮ С ПОДМЕНЮ "КОНТАКТЫ" ============
 document.addEventListener('DOMContentLoaded', function () {
