@@ -592,22 +592,23 @@ a {
   }
 }
 .gallery__item.item-7 {
+  flex-shrink: 0;
   margin-top: clamp(138px, 138px + (184 - 138) * (100vw - 1440px) / (1920 - 1440), 184px);
   max-width: clamp(1400px, 1400px + (1840 - 1400) * (100vw - 1440px) / (1920 - 1440), 1840px);
-  max-height: clamp(680px, 680px + (894 - 680) * (100vw - 1440px) / (1920 - 1440), 894px);
+  height: clamp(680px, 680px + (894 - 680) * (100vw - 1440px) / (1920 - 1440), 894px);
 }
 @media (max-width: 1400px) {
   .gallery__item.item-7 {
     margin-top: clamp(200px, 200px + (138 - 200) * (100vw - 1024px) / (1440 - 1024), 138px);
     max-width: clamp(984px, 984px + (1400 - 984) * (100vw - 1024px) / (1440 - 1024), 1400px);
-    max-height: clamp(478px, 478px + (680 - 478) * (100vw - 1024px) / (1440 - 1024), 680px);
+    height: clamp(478px, 478px + (680 - 478) * (100vw - 1024px) / (1440 - 1024), 680px);
   }
 }
 @media (max-width: 984px) {
   .gallery__item.item-7 {
     margin-top: clamp(120px, 120px + (200 - 120) * (100vw - 402px) / (1024 - 402), 200px);
     max-width: clamp(374px, 374px + (984 - 374) * (100vw - 402px) / (1024 - 402), 984px);
-    max-height: clamp(182px, 182px + (478 - 182) * (100vw - 402px) / (1024 - 402), 478px);
+    height: clamp(182px, 182px + (478 - 182) * (100vw - 402px) / (1024 - 402), 478px);
   }
 }
 .gallery__item > figcaption {
