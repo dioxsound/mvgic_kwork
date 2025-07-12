@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles/styles.css">
+	<title>MVGIC</title>
+</head>
+
+<body>
+
+	<div class="background">
+		<video autoplay muted loop playsinline class="background-video">
+			<source src="./images/background.webm" type="video/webm">
+		</video>
+	</div>
+
+	<header class="header">
+		<div class="container header__container">
+			<a href="/" class="header__logo logo">
+				<img src="./images/logo.svg" alt="MVGIC">
+			</a>
+			<nav class="nav header__menu">
+				<ul class="header__menu-list">
+					<li class="header__menu-item">
+						<button class="header__menu-button button" type="button">Play</button>
+					</li>
+					<li class="header__menu-item">
+						<button class="header__menu-button header__menu-button--contacts" type="button">Contacts</button>
+						<div class="header__submenu">
+							<button class="header__submenu-button button" type="button">Close</button>
+							<a href="#">Instagram</a>
+							<a href="#">Youtube</a>
+							<a href="#">Spotify</a>
+							<a href="#">LinkedIn</a>
+							<p>Email for collaborations:</p>
+							<a href="mailto:magic@mail.com">magic@mail.com</a>
+						</div>
+					</li>
+					<li class="header__menu-item">
+						<a href="./music.html" class="header__menu-link">Music</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main">
+
+		<section class="music">
+			<div class="music__container container">
+				<div class="music__row">
+					<div class="music__track">
+						<img src="./images/track.png" alt="Track" class="music__track-image">
+						<h2 class="music__track-title">MAgic - First track</h2>
+						<div class="music__track-item">
+							<a href="#" class="music__track-link">YOUTUBE</a>
+							<a href="#" class="music__track-link">spotify</a>
+						</div>
+					</div>
+					<div class="music__track">
+						<img src="./images/track.png" alt="Track" class="music__track-image">
+						<h2 class="music__track-title">MAgic - First track</h2>
+						<div class="music__track-item">
+							<a href="#" class="music__track-link">YOUTUBE</a>
+							<a href="#" class="music__track-link">spotify</a>
+						</div>
+					</div>
+					<div class="music__track">
+						<img src="./images/track.png" alt="Track" class="music__track-image">
+						<h2 class="music__track-title">MAgic - First track</h2>
+						<div class="music__track-item">
+							<a href="#" class="music__track-link">YOUTUBE</a>
+							<a href="#" class="music__track-link">spotify</a>
+						</div>
+					</div>
+					<div class="music__track">
+						<img src="./images/track.png" alt="Track" class="music__track-image">
+						<h2 class="music__track-title">MAgic - First track</h2>
+						<div class="music__track-item">
+							<a href="#" class="music__track-link">YOUTUBE</a>
+							<a href="#" class="music__track-link">spotify</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</main>
+
+	<audio id="background-audio" preload="auto" muted autoplay loop>
+		<source src="./audio/flowers.mp3" type="audio/mpeg">
+	</audio>
+	<script src="./js/main.js"></script>
+
+</body>
+
+</html>

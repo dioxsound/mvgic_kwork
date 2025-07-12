@@ -11,23 +11,22 @@
 	}
 
 	&__item {
-  transform: translateY(150px);
-  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+		transform: translateY(150px);
+		transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 
-  &.in-view {
-    transform: translateY(0);
-  }
+		&.in-view {
+			transform: translateY(0);
+		}
 
-  &.above {
-    transform: translateY(-100px);
-    transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
-  }
+		&.above {
+			transform: translateY(-100px);
+			transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
+		}
 
-  &.below {
-    transform: translateY(150px);
-    transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
-  }
-
+		&.below {
+			transform: translateY(150px);
+			transition: transform 0.8s cubic-bezier(0.55, 0.05, 0.25, 0.9);
+		}
 
 		&.item-1 {
 			@include fluid-prop(max-width, 1140, 808, 1440, 1920);
@@ -131,15 +130,18 @@
 		&.item-7 {
 			@include fluid-prop(margin-top, 184, 138, 1440, 1920);
 			@include fluid-prop(max-width, 1840, 1400, 1440, 1920);
+			@include fluid-prop(max-height, 894, 680, 1440, 1920);
 
 			@include tablet {
 				@include fluid-prop(margin-top, 138, 200, 1024, 1440);
 				@include fluid-prop(max-width, 1400, 984, 1024, 1440);
+				@include fluid-prop(max-height, 680, 478, 1024, 1440);
 			}
 
 			@include mobile {
 				@include fluid-prop(margin-top, 200, 120, 402, 1024);
 				@include fluid-prop(max-width, 984, 374, 402, 1024);
+				@include fluid-prop(max-height, 478, 182, 402, 1024);
 			}
 		}
 
