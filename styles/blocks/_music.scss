@@ -60,13 +60,13 @@
 			@include fluid-prop(margin-bottom, 15, 12, 1440, 1920);
 
 			@include tablet {
-				@include fluid-text(16, 11, 1024, 1440);
+				@include fluid-text(16, 12, 1024, 1440);
 				@include fluid-prop(margin-top, 22, 12, 1024, 1440);
 				@include fluid-prop(margin-bottom, 12, 8, 1024, 1440);
 			}
 
 			@include mobile {
-				@include fluid-text(11, 18, 402, 1024);
+				@include fluid-text(12, 18, 402, 1024);
 				@include fluid-prop(margin-top, 12, 20, 402, 1024);
 				@include fluid-prop(margin-bottom, 8, 12, 402, 1024);
 			}

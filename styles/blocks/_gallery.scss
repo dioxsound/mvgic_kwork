@@ -10,6 +10,14 @@
 		@include fluid-prop(padding-top, 90, 71, 402, 1024);
 	}
 
+	&__image,
+	&__video {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+	}
+
 	&__item {
 		transform: translateY(150px);
 		transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -128,8 +136,7 @@
 		}
 
 		&.item-7 {
-			
-flex-shrink: 0;
+			flex-shrink: 0;
 			@include fluid-prop(margin-top, 184, 138, 1440, 1920);
 			@include fluid-prop(max-width, 1840, 1400, 1440, 1920);
 			@include fluid-prop(height, 894, 680, 1440, 1920);
@@ -153,7 +160,7 @@ flex-shrink: 0;
 
 			@include mobile {
 				@include fluid-prop(margin-top, 8, 4, 402, 1024);
-				@include fluid-text(15, 10, 402, 1024);
+				@include fluid-text(15, 12, 402, 1024);
 			}
 		}
 	}
