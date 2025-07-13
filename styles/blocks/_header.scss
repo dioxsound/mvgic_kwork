@@ -31,7 +31,8 @@
 	}
 
 	&__submenu {
-		top: 70%;
+		top: -32px;
+
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
@@ -87,6 +88,7 @@
 	}
 
 	&__menu {
+		position: relative;
 		text-transform: uppercase;
 
 		&-button {

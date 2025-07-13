@@ -3,6 +3,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 20px;
 		@include fluid-prop(margin-top, 118, 75, 1440, 1920);
 
 		@include tablet {
@@ -12,6 +13,10 @@
 		@include mobile {
 			@include fluid-prop(margin-top, 72, 60, 402, 1024);
 			margin-bottom: 100px;
+		}
+
+		@media (max-width: 650px) {
+			gap: 40px;
 		}
 
 	}
@@ -27,6 +32,7 @@
 
 		@media (max-width: 650px) {
 			grid-template-columns: 1fr;
+			gap: 40px;
 		}
 	}
 
